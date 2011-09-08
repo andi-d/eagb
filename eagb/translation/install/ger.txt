@@ -1,0 +1,20 @@
+#TITLE = ea-Style Guestbook | Installation
+#INSTALL_EAGB = ea-Style Guestbook Installation
+#SUBMIT = Absenden
+#USERNAME = Username
+#PASSWORD = Passwort
+#INTRO = Die nächsten Schritte führen Sie durch die Installation des ea-Style Guestbooks
+#DATABASE_DESCRIPTION = Wählen Sie bitte Ihre bevorzugte Datenbank:
+#LANGUAGE = Sprache
+#LANGUAGE_DESCRIPTION = Bitte wählen Sie die Sprache des Gästebuchs (können Sie später im Adminpanel ändern)
+#MYSQL_HOST = MySQL Host
+#PORT = Port
+#LEAVE_EMPTY = (Leer lassen für Standardport)
+#ERROR_DBDIR_NOT_WRITEABLE = Achtung: Das Verzeichnis <code>&lt;root&gt;eagb/data</code> zum Speichern der SQLite Datenbank ist nicht beschreibbar. Falls Sie eine MySQL installation planen, ignorieren Sie diese Warnung.
+#ERROR_SQLITE_NOT_INSTALLED = Achtung: SQLite ist auf Ihrem System nicht aktiviert.
+#ERROR_CONFIG_DIR_NOT_WRITEABLE = Warnung: Das <code>&lt;root&gt;eagb/config</code> Verzeichnis ist nicht beschreibbar. Bitte korrigieren Sie das bevor Sie fortfahren.
+#INSTALL_SUCCESS = Installation erfolgreich
+#INSTALL_NOTICE = Die Installation ist abgeschlossen.<br/><span class="important">Wichtig!</span> Bitte löschen Sie jetzt die <code>install.php</code> im <code>eagb</code> Ordner. Falls nicht wird jeder Ihre Einstellungen und Daten ändern und löschen können!
+#INSTALL_NOTICE2 = Klicken Sie <a href="/demo.php">hier</a>, nachdem Sie die Datei <code>install.php</code> gelöscht haben.
+#MYSQL_DB = Datenbank
+#CREATE_IF_NOT_EXIST = (Wird angelegt falls nicht vorhanden und die Rechte dafür ausreichen)

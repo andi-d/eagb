@@ -1,0 +1,128 @@
+/* 
+    Document   : style.css
+    Created on : 23.07.2011, 00:59:53
+    Author     : andi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+    font-family: Helvetica, Arial,sans-serif;
+    background: #efefef url('../img/body-background.jpg') top left repeat;;
+    color: #333;
+    font-size: 14px;
+    line-height: 160%;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #2D78A6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+hr {
+    border-top: 1px solid #333;
+}
+
+p {
+    margin: .5em 0;
+}
+
+h1 { font-size: 24px; line-height: 28px; }
+h2 { font-size: 22px; line-height: 26px; }
+h3 { font-size: 20px; line-height: 24px; }
+h3 { font-size: 18px; line-height: 22px; }
+h4 { font-size: 16px; line-height: 20px; }
+
+#container {
+    width: 960px;
+    margin: 10px auto;
+    position: relative;
+    background: #fff;
+    /*-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;*/
+}
+
+#header {
+    font-family: 'PT Sans', Helvetica, Arial,sans-serif;
+    height: 260px;
+    width: 960px;
+    background: transparent url('../img/header.png') top left no-repeat;
+    position: relative;
+    text-align: right;
+    border-bottom: 5px solid #2D78A6;
+}
+
+#header img {
+    display: block;
+}
+
+#header #branding {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+}
+
+#header, #header a {
+    color: #fff;
+}
+
+#header a {
+    font-size: 30px;
+}
+
+#header h1 {
+    margin: 0;
+}
+
+#header p {
+    font-size: 22px;
+    margin: 0;
+}
+
+#navigation {
+    width: 20%;
+    float: left;
+}
+
+#navigation a {
+    display: block;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#navigation a:hover {
+    padding-left: 15px;
+}
+
+#body {
+    width: 80%;
+    float: left;
+}
+
+#content {
+    padding: 10px;
+}
+
+#footer {
+    font-size: 12px;
+    clear: both;
+    padding: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    background: #efefef;
+}

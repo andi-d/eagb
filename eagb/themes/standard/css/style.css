@@ -1,0 +1,479 @@
+/* 
+    Document   : style.css
+    Created on : 16.11.2010, 12:43:36
+    Author     : Andreas.Derksen
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+@font-face {
+    font-family: 'PT Sans';
+	src: local('PT Sans'), url('font/PTS55F_W.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Sans';
+	font-style: italic;
+	src: local('PT Sans Italic'), url('font/PTS56F_W.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: bold;
+	src: local('PT Sans Bold'), url('font/PTS75F_W.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Sans';
+	font-style: italic;
+	font-weight: bold;
+	src: local('PT Sans Bold Italic'), url('font/PTS76F_W.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Sans Caption';
+	src: local('PT Sans Caption'), url('font/PTC55F_W.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Sans Caption';
+	font-weight: bold;
+	src: local('PT Sans Caption Bold'), url('font/PTC75F_W.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+	src: local('PT Sans Narrow'), url('font/PTN57F_W.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+	font-weight: bold;
+	src: local('PT Sans Narrow Bold'), url('font/PTN77F_W.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Serif';
+	src: local('PT Serif'), url('font/ptf55f_w.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Serif';
+	font-style: italic;
+	src: local('PT Serif Italic'), url('font/ptf56f_w.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Serif';
+	font-style: normal;
+	font-weight: bold;
+	src: local('PT Serif Bold'), url('font/ptf75f_w.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'PT Serif';
+	font-style: italic;
+	font-weight: bold;
+	src: local('PT Serif Bold Italic'), url('font/ptf76f_w.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Serif Caption';
+	src: local('PT Serif Caption'), url('font/ptz55f_w.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PT Serif Caption';
+	font-style: italic;
+	src: local('PT Serif Caption Italic'), url('font/ptz56f_w.ttf') format('truetype');
+}
+
+#eagb {
+    font-family: Helvetica, Arial,sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+#eagb h1, #eagb h2, #eagb h3, #eagb h4 {
+    font-family: 'PT Sans', Helvetica, Arial,sans-serif;
+    font-weight: normal;
+    margin: .5em 0;
+    padding: 0;
+}
+
+#eagb label {
+    display: block;
+    font-weight: bold;
+    clear: left;
+}
+
+#eagb input[type="checkbox"] + label {
+    clear: none;
+}
+
+#eagb ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#eagb em {
+    font-style: italic;
+}
+
+#eagb textarea {
+    font: inherit;
+}
+
+#eagb img {
+    vertical-align: baseline;
+}
+
+#eagb table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+#eagb thead {
+    background: #333;
+    color: #fff;
+}
+
+#eagb th, #eagb td {
+    text-align: left;
+    padding: .25em;
+}
+
+#eagb caption {
+    text-align: left;
+    font-weight: bold;
+}
+
+#eagb fieldset {
+    padding: 10px;
+    margin: .5em 0;
+}
+
+#eagb legend {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: #333;
+    color: #fff;
+    padding: 0 5px;
+}
+
+#eagb dt {
+    font-weight: bold;
+}
+
+#eagb dl {
+    margin-bottom: 1em;
+}
+
+#eagb input[type="text"], #eagb input[type="password"], #eagb textarea {
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+#eagb input[type="text"], #eagb input[type="password"] {
+    height: 18px;
+}
+
+#eagb input[type="text"]:focus, #eagb input[type="password"]:focus, #eagb input[type="submit"]:focus, #eagb textarea:focus {
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    border: 1px solid #666;
+}
+
+#eagb input[type="submit"] {
+    margin: .5em 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    background: #efefef url('../img/button-back.png') top left repeat-x;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    height: 24px;
+    line-height: 24px;
+}
+
+#eagb input[type="submit"]:active {
+    background-image: url('../img/button-back-focus.png');
+}
+
+#eagb input[type="submit"]:focus {
+}
+
+#eagb input[type="submit"]:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+#eagb input[type="checkbox"] {
+    display: inline;
+    float: left;
+}
+
+#eagb #flash {
+    padding: 5px 5px 5px 21px;
+    border: 1px solid #ccc;
+    background: #efefef;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+#eagb #flash:before {
+    font-family: serif;
+    border: 1px solid #333;
+    background: #fff;
+    padding: 0 6px;
+    margin-right: 5px;
+    content: 'i';
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+#eagb #flash.validationError {
+    content: '!';
+    border: 1px solid #ff7c7c;
+    background: #ffb3b3;
+}
+
+#eagb #flash.validationError:before {
+    content: '!';
+}
+
+#eagb .validation-error {
+    color: red;
+}
+
+#eagb .altrow {
+    background: #efefef;
+}
+
+#eagb .warning {
+    font-size: 1.25em;
+    background: #ec6642;
+    padding: 2px 5px;
+    border: 1px solid #f53825;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#eagb .notification {
+    font-size: 1.25em;
+    background: #90ff88;
+    padding: 2px 5px;
+    border: 1px solid #3c8c3c;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+}
+
+#eagb #exception-box {
+    position: absolute;
+    bottom: 0;
+}
+
+#eagb {
+    clear: both;
+    padding-bottom: 1em;
+}
+
+#eagb #container {
+    position: relative;
+    width: 500px;
+    margin: 1em auto;
+    background: #fff;
+    padding: 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+#eagb #footer {
+    font-family: 'PT Sans', Helvetica, Arial,sans-serif;
+    background: #333;
+    padding: 3px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* Login */
+
+#eagb #login-page fieldset input {
+    width: 200px;
+}
+
+/* Guestbook index */
+#eagb .admin-actions {
+    display: none;
+    position: absolute;
+    right: -16px;
+    width: 16px;
+    height: 16px;
+    background: transparent url('../img/delete.png') top left no-repeat;
+    text-indent: -9999px;
+}
+#eagb .admin-actions a {
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+#eagb .guestbook-entry {
+    margin-bottom: 1em;
+    position: relative;
+}
+
+#eagb .guestbook-entry:hover .admin-actions {
+    display: block;
+}
+
+#eagb .guestbook-header {
+    background: #333;
+    color: #fff;
+    padding: 4px;
+}
+
+#eagb .guestbook-subheader {
+    background: #efefef;
+    font-size: 12px;
+    text-align: right;
+    padding: 2px;
+}
+
+#eagb .guestbook-name {
+    font-weight: bold;
+    float: left;
+}
+
+#eagb .guestbook-email {
+    border-right: 1px solid #fff;
+    padding-right: 5px;
+}
+
+#eagb .guestbook-body {
+    border-left: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    padding: .5em;
+}
+
+#eagb .guestbook-body p {
+    margin: 0;
+}
+
+#eagb .guestbook-date a {
+    color: #fff;
+}
+
+#eagb .guestbook-date {
+    float: right;
+    font-size: 11px;
+    /* font-style: italic; */
+    /* font-family: 'PT Serif', serif; */
+}
+
+/* Guestbook add */
+#eagb #add-page fieldset input {
+    width: 200px;
+}
+
+#eagb #add-page input[type="checkbox"] {
+    width: auto;
+}
+
+#eagb #smileys {
+    width: 25%;
+    float: right;
+}
+
+#eagb #smiley-list {
+    padding: 14px;
+    border: 1px solid #999;
+    margin-top: 0;
+}
+
+#eagb #smiley-list img {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#eagb #smiley-list li {
+    float: left;
+    margin-right: 6px;
+}
+
+#eagb #guestbook-add-body-box {
+    clear: both;
+}
+
+#eagb #guestbook-add-body {
+    width: 70%;
+    float: left;
+}
+
+/* Admin Panel */
+#eagb #admin-panel table {
+    width: 100%;
+}
+
+#eagb .table-action {
+    text-align: right;
+}
+
+#eagb #admin-badlist label, #eagb .input-smiley label, #eagb .input-url label {
+    display: inline-block;
+    width: 25%;
+}
+
+#eagb .input-badword {
+    vertical-align: middle;
+}
+
+#eagb #admin-panel legend {
+    cursor: pointer;
+}
+
+#eagb .admin-action-info {
+    font-style: italic;
+    color: #666;
+}
