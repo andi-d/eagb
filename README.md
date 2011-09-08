@@ -21,8 +21,8 @@ _(For basic integration, you can check the demo.php inside your webroot.)_
 
 Basically, you need 3 Things after you installed the guestbook:
 
-1. put <code>include 'eagb/eagb.php'</code> at the top of your index.php
-2. put <code><?php echo eaLoadTheme('standard'); ?></code> inside your layout's <code>&lt;head&gt;</code> to load the basic styling for the guestbook.
-3. A place for the guestbook itself. To ouput it in the desired place, just write <code><?php echo $eaGB; ?></code> where you want your guestbook.
+1. put `include 'eagb/eagb.php'` at the top of your index.php
+2. put `<?php echo eaLoadTheme('standard'); ?>` inside your layout's `&lt;head&gt;` to load the basic styling for the guestbook.
+3. A place for the guestbook itself. To ouput it in the desired place, just write `<?php echo $eaGB; ?>` where you want your guestbook.
 
 # Enjoy!
