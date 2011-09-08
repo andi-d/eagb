@@ -11,7 +11,8 @@
 
 1. Copy all content of the package into your webroot
 2. Navigate to yourdomain.tld/eagb/install.php
-3.  - [SQLite](http://sqlite.org/): Make sure your "data" folder inside the eagb folder is writeable (777)) and click &lt;Install&gt;.
+3.
+    - [SQLite](http://sqlite.org/): Make sure your "data" folder inside the eagb folder is writeable (777)) and click &lt;Install&gt;.
     - [MySQL](http://mysql.com/): Enter your Server Information and User credentials. Then click &lt;Install&gt;.
 4. Finish! You should now see the "Success" page. To check your installation, navigate to yourdomain.tld/demo.php to see the demo page.
 
