@@ -15,6 +15,10 @@
  */
 abstract class eaGB_Model
 {
+    /**
+     *
+     * @var eaGB_Database
+     */
     protected $database = null;
     
     public function __construct()

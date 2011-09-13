@@ -10,5 +10,6 @@ return array(
     'salt'              => 'ijoeJOIJ123§1!"DgkQWl*',
     'userSessionKey'    => "eagb_user",
     'hash'              => "sha1",
-    'version'           => 1.0
+    'version'           => 2.0,
+    'updateUrl'         => 'http://ea-style.de/version.php'
 );

@@ -28,16 +28,25 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $this->user = new eaGB_Model_User();
     }
 
-    public function indexAction()
+    public function indexAction($page = null)
     {
+        if ($page == null) {
+            $page = 1;
+        }
+        $page = abs($page);
+        $limit = $this->getConfig()->read('pageLimit');
+        $offset = ($limit * $page) - $limit;
         $guestbook = new eaGB_Model_Guestbook();
-        $entries = $guestbook->findAll();
+        $entries = $guestbook->paginate($offset, $limit);
+        $pages = $guestbook->getPages($limit);
         foreach ($entries as &$entry) {
             $entry['body'] = htmlspecialchars($entry['body'], ENT_QUOTES, 'UTF-8');
             $entry['name'] = htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8');
         }
         $smileys = new eaGB_Model_Smiley();
         $entries = $smileys->addSmileys($entries);
+        $this->set('page', $page);
+        $this->set('pages', $pages);
         $this->set('entries', $entries);
     }
 

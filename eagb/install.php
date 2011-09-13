@@ -25,7 +25,8 @@ if (!empty($_POST)) {
         'hash'              => "sha1",
         'salt'              => uniqid(),
         'locale'            => in_array($_POST['language'], $supportedLanguages) ? $_POST['language'] : 'ger',
-        'version'           => 1.0,
+        'version'           => 2.0,
+        'pageLimit'         => 10,
         'updateUrl'         => 'http://ea-style.de/version.php'
     );
     

@@ -27,11 +27,6 @@ class eaGB_Model_Guestbook extends eaGB_Model
     protected $config;
     /**
      *
-     * @var eaGB_Storage
-     */
-    protected $storage;
-    /**
-     *
      * @var array
      */
     protected $entries = array();
@@ -93,6 +88,21 @@ class eaGB_Model_Guestbook extends eaGB_Model
             return true;
         }
     }
+    
+    public function paginate($offset, $limit)
+    {
+        $query = sprintf('SELECT * FROM %s ORDER BY `id` DESC LIMIT %d OFFSET %s', $this->getTable(), $limit, $offset);
+        return $this->database->query($query);
+    }
+
+    public function getPages($limit)
+    {
+        $query = sprintf('SELECT COUNT(1) FROM %s', $this->getTable());
+        $result = $this->database->query($query);
+        $r = ceil($result[0]['COUNT(1)'] / $limit);
+        return $r;
+    }
+
 
     /**
      *
