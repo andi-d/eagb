@@ -16,6 +16,10 @@
     - [MySQL](http://mysql.com/): Enter your Server Information and User credentials. Then click &lt;Install&gt;.
 4. Finish! You should now see the "Success" page. To check your installation, navigate to yourdomain.tld/demo.php to see the demo page.
 
+NOTE: Default Username and Password for the Adminpage:
+User: admin
+Password: password
+
 ### Integration
 _(For basic integration, you can check the demo.php inside your webroot.)_
 
@@ -44,6 +48,10 @@ Basically, you need 3 Things after you installed the guestbook:
     - [SQLite](http://sqlite.org/): Stellen Sie sicher das das "data" Verzeichnis im eagb Ordner beschreibbar ist (777) und klicken Sie auf &lt;Installieren&gt;.
     - [MySQL](http://mysql.com/): Geben Sie Ihre Serverdaten und MySQL Benutzerdaten ein und klicken Sie auf &lt;Installieren&gt;.
 4. Fertig! Jetzt müssten Sie eine "Erfolgs"-seite sehen. Um die Installation zu testen, öffnen Sie die URL deinedomain.de/demo.php um die Demoseite zu öffnen.
+
+NOTIZ: Standard Benutzername und Password für die Adminseite:
+Name: admin
+Passwort: password
 
 ### Einbindung in Ihre Seite
 _(Für ein Beispiel der Einbindung, können Sie die Demoseite in Ihrem Webroot studieren.)_
