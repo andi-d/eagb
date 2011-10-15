@@ -70,7 +70,6 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
                 'body'      => $post['guestbook-add-body'],
                 'hide_email'=> isset($post['guestbook-add-hide-email']) ? 1 : 0
             );
-            $data['homepage'] = 'http://' . ltrim($data['homepage'], 'http://'); // move to model
             $badwordFilter = new eaGB_Model_Badword();
             $data = $badwordFilter->filterWords($data);
             if ($guestbook->save($data)) {

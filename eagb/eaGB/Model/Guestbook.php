@@ -60,22 +60,22 @@ class eaGB_Model_Guestbook extends eaGB_Model
             throw new Exception('Invalid settings data');
         }
 
-        if($settings['required_name'] && (trim($data['name']) == '' || strlen($data['name']) > 50)) {
+        if(($settings['required_name'] || !empty($data['required_name'])) && (trim($data['name']) == '' || strlen($data['name']) > 50)) {
             $data['name'] = '';
             $errors['name'] = array('message' => 'VALIDATION_NAME_INVALID');
         }
 
-        if ($settings['required_email'] && filter_var($data['email'], FILTER_VALIDATE_EMAIL) === false) {
+        if (($settings['required_email'] || !empty($data['email'])) && filter_var($data['email'], FILTER_VALIDATE_EMAIL) === false) {
             $data['email'] = '';
             $errors['email'] = array('message' => 'VALIDATION_EMAIL_INVALID');
         }
 
-        if ($settings['required_homepage'] && (filter_var($data['homepage'], FILTER_VALIDATE_URL) === false) OR strlen($data['homepage'] > 255)) {
+        if (($settings['required_homepage'] || !empty($data['homepage'])) && ((filter_var($data['homepage'], FILTER_VALIDATE_URL) === false) OR strlen($data['homepage'] > 255))) {
             $data['homepage'] = '';
             $errors['homepage'] = array('message' => 'VALIDATION_HOMEPAGE_INVALID');
         }
         
-        if ($settings['required_body'] && (strlen($data['body']) > 1000) OR empty($data['body'])) {
+        if (($settings['required_body'] || !empty($data['body'])) && ((strlen($data['body']) > 1000) OR empty($data['body']))) {
             $data['body'] = '';
             $errors['body'] = array('message' => 'VALIDATION_BODY_INVALID');
         }
