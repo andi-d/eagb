@@ -80,6 +80,10 @@ class eaGB_Model_Guestbook extends eaGB_Model
             $errors['body'] = array('message' => 'VALIDATION_BODY_INVALID');
         }
 
+        if ($settings['use_captcha'] && isset($_SESSION['captcha_code']) && strcmp(strtolower($_SESSION['captcha_code']), strtolower($data['captcha']))) {
+            $errors['captcha'] = array('message' => 'VALIDATION_CAPTCHA_INVALID');
+        }
+
         if ($errors) {
             $this->errors = $errors;
             $this->invalidData = $data;

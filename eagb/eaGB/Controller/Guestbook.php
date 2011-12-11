@@ -63,12 +63,14 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $this->set('useCaptcha', $settingsModel->getSetting('use_captcha'));
         if ($request->isPost()) {
             $post = $request->getPost();
+
             $data = array(
                 'name'      => $post['guestbook-add-name'],
                 'email'     => $post['guestbook-add-email'],
                 'homepage'  => $post['guestbook-add-homepage'],
                 'body'      => $post['guestbook-add-body'],
-                'hide_email'=> isset($post['guestbook-add-hide-email']) ? 1 : 0
+                'hide_email'=> isset($post['guestbook-add-hide-email']) ? 1 : 0,
+                'captcha'   => $post['guestbook-add-captcha']
             );
             $badwordFilter = new eaGB_Model_Badword();
             $data = $badwordFilter->filterWords($data);

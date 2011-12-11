@@ -32,7 +32,7 @@ class eaGB_Model_Settings extends eaGB_Model
 
     public function getRequiredFields()
     {
-        $settings = $this->findAll('`name` = "required_name" OR `name` = "required_email" OR `name` = "required_homepage" OR `name` = "required_body"');
+        $settings = $this->findAll('`name` = "required_name" OR `name` = "required_email" OR `name` = "required_homepage" OR `name` = "required_body" OR `name` = "use_captcha"');
         $ret = array();
         foreach ($settings as $setting)
             $ret[$setting['name']] = $setting['setting'];

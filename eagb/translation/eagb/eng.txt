@@ -64,3 +64,4 @@
 #VALIDATION_EMAIL_INVALID = Please enter a valid email address
 #VALIDATION_HOMEPAGE_INVALID = Please enter a valid Webaddress
 #VALIDATION_BODY_INVALID = Please enter your message
+#VALIDATION_CAPTCHA_INVALID = The Captcha you entered is wrong
