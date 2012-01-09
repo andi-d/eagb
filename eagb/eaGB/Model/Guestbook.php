@@ -70,10 +70,8 @@ class eaGB_Model_Guestbook extends eaGB_Model
             $errors['email'] = array('message' => 'VALIDATION_EMAIL_INVALID');
         }
 
-        $data['homepage'] = 'http://' . ltrim($data['homepage'], 'http://');
-        var_dump($data['homepage']);
-        var_dump(filter_var($data['homepage'], FILTER_VALIDATE_URL));
-        var_dump(($settings['required_homepage'] || !empty($data['homepage'])));
+        $data['homepage'] = !empty($data['homepage']) ? 'http://' . ltrim($data['homepage'], 'http://') : '';
+        
         if (($settings['required_homepage'] || !empty($data['homepage'])) && ((filter_var($data['homepage'], FILTER_VALIDATE_URL) === false) || strlen($data['homepage'] > 255))) {
             $data['homepage'] = '';
             $errors['homepage'] = array('message' => 'VALIDATION_HOMEPAGE_INVALID');
