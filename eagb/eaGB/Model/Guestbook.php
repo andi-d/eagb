@@ -70,19 +70,23 @@ class eaGB_Model_Guestbook extends eaGB_Model
             $errors['email'] = array('message' => 'VALIDATION_EMAIL_INVALID');
         }
 
-        if (($settings['required_homepage'] || !empty($data['homepage'])) && ((filter_var($data['homepage'], FILTER_VALIDATE_URL) === false) OR strlen($data['homepage'] > 255))) {
+        $data['homepage'] = 'http://' . ltrim($data['homepage'], 'http://');
+        var_dump($data['homepage']);
+        var_dump(filter_var($data['homepage'], FILTER_VALIDATE_URL));
+        var_dump(($settings['required_homepage'] || !empty($data['homepage'])));
+        if (($settings['required_homepage'] || !empty($data['homepage'])) && ((filter_var($data['homepage'], FILTER_VALIDATE_URL) === false) || strlen($data['homepage'] > 255))) {
             $data['homepage'] = '';
             $errors['homepage'] = array('message' => 'VALIDATION_HOMEPAGE_INVALID');
         }
         
-        if (($settings['required_body'] || !empty($data['body'])) && ((strlen($data['body']) > 1000) OR empty($data['body']))) {
+        if (($settings['required_body'] || !empty($data['body'])) && ((strlen($data['body']) > 1000) || empty($data['body']))) {
             $data['body'] = '';
             $errors['body'] = array('message' => 'VALIDATION_BODY_INVALID');
         }
 
-        if ($settings['use_captcha'] && isset($_SESSION['captcha_code']) && strcmp(strtolower($_SESSION['captcha_code']), strtolower($data['captcha']))) {
-            $errors['captcha'] = array('message' => 'VALIDATION_CAPTCHA_INVALID');
-        }
+        //if ($settings['use_captcha'] && isset($_SESSION['captcha_code']) && strcmp(strtolower($_SESSION['captcha_code']), strtolower($data['captcha']))) {
+        //    $errors['captcha'] = array('message' => 'VALIDATION_CAPTCHA_INVALID');
+        //}
 
         if ($errors) {
             $this->errors = $errors;

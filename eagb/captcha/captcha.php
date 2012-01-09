@@ -1,8 +1,12 @@
 <?php
 // Session starten
-session_start();
+require_once '../eaGB/Session.php';
+eaGB_Session::start('eaGB');
+eaGB_Session::write('captcha_code', null);
+//session_start();
 // Alten CAPTCHA-Code aus der Session loeschen
-unset( $_SESSION['captcha_code'] );
+//unset( $_SESSION['captcha_code'] );
+
 
 // Das Cachen der Grafik verhindern
 header( "Expires: Mon, 26 Jul 1997 05:00:00 GMT" );
@@ -22,7 +26,8 @@ $ZufallString3 = substr( str_shuffle( $AlphaNumerischerString ), 0, 2 );
 $ZufallStringKomplett = $ZufallString1.$ZufallString2.$ZufallString3;
 
 // Sicherheitscode in der Session speichern
-$_SESSION['captcha_code'] = md5( $ZufallStringKomplett );
+//$_SESSION['captcha_code'] = md5( $ZufallStringKomplett );
+eaGB_Session::write('captcha_code', md5( strtolower($ZufallStringKomplett) ));
 
 // Grafik erzeugen und an den Browser senden
 $Schriftarten = array( "./XFILES.TTF", "./XFILES.TTF", "./XFILES.TTF");

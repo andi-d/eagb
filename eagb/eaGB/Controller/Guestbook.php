@@ -63,23 +63,33 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $this->set('useCaptcha', $settingsModel->getSetting('use_captcha'));
         if ($request->isPost()) {
             $post = $request->getPost();
-
             $data = array(
                 'name'      => $post['guestbook-add-name'],
                 'email'     => $post['guestbook-add-email'],
                 'homepage'  => $post['guestbook-add-homepage'],
                 'body'      => $post['guestbook-add-body'],
                 'hide_email'=> isset($post['guestbook-add-hide-email']) ? 1 : 0,
-                'captcha'   => $post['guestbook-add-captcha']
+                //'captcha'   => $post['guestbook-add-captcha']
             );
-            $badwordFilter = new eaGB_Model_Badword();
-            $data = $badwordFilter->filterWords($data);
-            if ($guestbook->save($data)) {
-                $this->redirect('index');
+
+
+            $generatedCaptcha = eaGB_Session::read('captcha_code');
+            $postCaptcha      = $post['guestbook-add-captcha'];
+            if (!$settingsModel->getSetting('use_captcha')
+                || ($generatedCaptcha != null && ($generatedCaptcha === md5(strtolower($postCaptcha))))) {
+
+                $badwordFilter = new eaGB_Model_Badword();
+                $data = $badwordFilter->filterWords($data);
+                if ($guestbook->save($data)) {
+                    $this->redirect('index');
+                } else {
+                    $this->set('data', $guestbook->getInvalidData());
+                    $this->set('errors', $guestbook->getErrors());
+                    //eaGB_Session::setFlash(__('There was an error with the data you entered.'));
+                }
             } else {
-                $this->set('data', $guestbook->getInvalidData());
-                $this->set('errors', $guestbook->getErrors());
-                eaGB_Session::setFlash(__('There was an error with the data you entered.'));
+                $this->set('data', $data);
+                $this->set('errors', array('captcha' => array('message' => 'VALIDATION_CAPTCHA_INVALID')));
             }
         } else {
             $this->set('data', array(

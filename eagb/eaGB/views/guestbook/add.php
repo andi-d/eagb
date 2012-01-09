@@ -41,7 +41,7 @@
                 <input type="text" id="guestbook-add-name" name="guestbook-add-name" value="<?php echo isset($data['name']) ? $data['name'] : '' ?>" />
             </div>
             <div id="guestbook-add-email-box">
-                <label for="guestbook-add-name"><?php __('EMAIL'); echo $required['required_email'] ? '*' : '' ?></label>
+                <label for="guestbook-add-email"><?php __('EMAIL'); echo $required['required_email'] ? '*' : '' ?></label>
                 <?php if (isset($errors['email'])): ?>
                 <p class="validation-error"><?php __($errors['email']['message']);?></p>
                 <?php endif;?>
@@ -76,11 +76,14 @@
                 <?php endif; ?>
             </div>
             <?php if ($useCaptcha): ?>
-                <div>
-                    <label for="guestbook-add-captcha"><?php __('CAPTCHA_DESCRIPTION') ?></label>
-                    <input type="text" id="guestbook-add-captcha" name="guestbook-add-captcha" />
-                    <img src="<?php echo eaBaseUrl() ?>/eagb/captcha/captcha.php" alt="" />
-                </div>
+            <div>
+                <label for="guestbook-add-captcha"><?php __('CAPTCHA_DESCRIPTION') ?></label>
+                <?php if (isset($errors['captcha'])): ?>
+                    <p class="validation-error"><?php __($errors['captcha']['message']);?></p>
+                <?php endif;?>
+                <input type="text" id="guestbook-add-captcha" name="guestbook-add-captcha" />
+                <img src="<?php echo eaBaseUrl() ?>/eagb/captcha/captcha.php" alt="" />
+            </div>
             <?php endif; ?>
         </fieldset>
         <input type="submit" value="<?php __('SUBMIT') ?>" />
