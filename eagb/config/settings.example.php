@@ -11,5 +11,6 @@ return array(
     'userSessionKey'    => "eagb_user",
     'hash'              => "sha1",
     'version'           => 2.0,
-    'updateUrl'         => 'http://ea-style.de/version.php'
+    'updateUrl'         => 'http://ea-style.de/version.php',
+    'pageLimit'         => 10,
 );
