@@ -154,9 +154,7 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         }
         $url = $this->getConfig()->read('updateUrl');
         $response = (array)@json_decode(file_get_contents($url));
-        if (!$response) {
-            $response = 'N/A';
-        }
+
         $version = $this->getConfig()->read('version');
         
         $guestbook = new eaGB_Model_Guestbook();
@@ -171,12 +169,18 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $settings = new eaGB_Model_Settings();
         $fields = $settings->getRequiredFields();
 
+        $newVersionAvailable = 'N/A';
+        if ($response && (float)$response['current'] > (float)$version) {
+            $newVersionAvailable = true;
+        }
+
         $this->set('currentLanguage', $this->getConfig()->read('locale'));
         $this->set('version', $version);
         $this->set('updateCheck', $response);
         $this->set('smileys', $smileys);
         $this->set('badWords', $badWords);
         $this->set('entries', $entries);
+        $this->set('newVersionAvailable', $newVersionAvailable);
         $this->set('fields', $fields);
     }
 

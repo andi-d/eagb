@@ -12,9 +12,9 @@
     })(jQuery);
 </script>
 <div id="admin-panel">
-    <h2>Adminpanel <small>ea-Style Guestbook v<?php echo $version ?></small></h2>
+    <h2>Adminpanel <small>ea-Style Guestbook v <?php echo $version ?></small></h2>
     <div id="update-notifier">
-        <?php if ($updateCheck != 'N/A' && (float)$updateCheck['current'] > (float)$version): ?>
+        <?php if ($newVersionAvailable === true): ?>
         <p class="notification"><?php __('UPDATE_AVAILABLE'); ?></p>
         <?php endif; ?>
     </div>
