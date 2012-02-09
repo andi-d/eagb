@@ -27,4 +27,4 @@ INSERT INTO `eagb_settings` (`name`, `setting`) VALUES
 ('required_email', 1),
 ('required_homepage', 0),
 ('required_body', 1),
-('use_captcha', 1);
+('required_captcha', 1);

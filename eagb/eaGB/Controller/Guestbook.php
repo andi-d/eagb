@@ -60,7 +60,7 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $settingsModel = new eaGB_Model_Settings();
         $requiredFields = $settingsModel->getRequiredFields();
         $this->set('required', $requiredFields);
-        $this->set('useCaptcha', $settingsModel->getSetting('use_captcha'));
+        $this->set('useCaptcha', $settingsModel->getSetting('required_captcha'));
         if ($request->isPost()) {
             $post = $request->getPost();
             $data = array(
@@ -75,7 +75,7 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
 
             $generatedCaptcha = eaGB_Session::read('captcha_code');
             $postCaptcha      = $post['guestbook-add-captcha'];
-            if (!$settingsModel->getSetting('use_captcha')
+            if (!$settingsModel->getSetting('required_captcha')
                 || ($generatedCaptcha != null && ($generatedCaptcha === md5(strtolower($postCaptcha))))) {
 
                 $badwordFilter = new eaGB_Model_Badword();

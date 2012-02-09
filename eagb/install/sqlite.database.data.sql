@@ -24,4 +24,4 @@ INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('required_name', 1);
 INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('required_email', 1);
 INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('required_homepage', 0);
 INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('required_body', 1);
-INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('use_captcha', 1);
+INSERT INTO `eagb_settings` (`name`, `setting`) VALUES ('required_captcha', 1);
