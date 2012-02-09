@@ -1,2 +1,4 @@
 nbproject
 .idea
+eagb/config/settings.php
+eagb/data/eagb.sqlite
