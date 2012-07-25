@@ -153,7 +153,7 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
             $this->redirect('index');
         }
         $url = $this->getConfig()->read('updateUrl');
-        $response = (array)@json_decode(file_get_contents($url));
+        $response = (array)@json_decode(file_get_contents($url)); // TODO: refactor
 
         $version = $this->getConfig()->read('version');
         
@@ -169,7 +169,29 @@ class eaGB_Controller_Guestbook extends eaGB_Controller
         $settings = new eaGB_Model_Settings();
         $fields = $settings->getRequiredFields();
 
-        $newVersionAvailable = 'N/A';
+        $newVersionAvailable = false;
+        if ($response) {
+            $tmp = explode('.', $response['current']);
+            $remoteVersion['major']     = isset($tmp[0]) ? $tmp[0] : 0;
+            $remoteVersion['minor']     = isset($tmp[1]) ? $tmp[1] : 0;
+            $remoteVersion['revision']  = isset($tmp[2]) ? $tmp[2] : 0;
+            
+            unset($tmp);
+            $tmp = explode('.', $version);
+            $localVersion['major']     = isset($tmp[0]) ? $tmp[0] : 0;
+            $localVersion['minor']     = isset($tmp[1]) ? $tmp[1] : 0;
+            $localVersion['revision']  = isset($tmp[2]) ? $tmp[2] : 0;
+
+
+            if (($localVersion['major'] < $remoteVersion['major'])
+                || ($localVersion['minor'] < $remoteVersion['minor'])
+                || ($localVersion['revision'] < $remoteVersion['revision'])) {
+                $newVersionAvailable = true;
+            }
+        }
+
+        
+
         if ($response && (float)$response['current'] > (float)$version) {
             $newVersionAvailable = true;
         }
